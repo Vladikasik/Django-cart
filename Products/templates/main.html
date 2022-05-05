@@ -22,14 +22,15 @@
 <p>A Grid Layout must have a parent element with the <em>display</em> property set to <em>grid</em> or <em>inline-grid</em>.</p>
 
 <p>Direct child element(s) of the grid container automatically becomes grid items.</p>
-
 <div class="grid-container">
     {% for product in products %}
         <div class="grid-item">
             <ul>
                 <li><h3>{{product.name}}</h3></li>
                 <li>{{product.price}}</li>
-                <li><button>Добавить в корзину</button></li>
+                <li>
+                  <button type="submit", onclick=" window.open('/add_product/{{product.pk}}/', '_blank') "></button>
+                </li>
             </ul>
         </div> 
     {% endfor %}
